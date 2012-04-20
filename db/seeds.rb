@@ -8,6 +8,9 @@
 
 #s@gmail.com, password: password
 
+#2nd admin
+#email: d@gmail.com, password = password
+
 admin_user = User.create(:email => "admin@ticketee.com",
                           :password => "password")
 admin_user.admin = true
