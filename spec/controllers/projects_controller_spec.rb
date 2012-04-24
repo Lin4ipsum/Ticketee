@@ -25,8 +25,6 @@ it "cannot access the show action" do
   response.should redirect_to(projects_path)
     flash[:alert].should eql("The project you were looking for could not be found.")
 end
-
-
   
    it "displays an error for a missing project" do
             sign_in(:user, user)

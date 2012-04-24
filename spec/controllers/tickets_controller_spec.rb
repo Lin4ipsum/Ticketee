@@ -13,11 +13,12 @@ describe TicketsController do
       response.should redirect_to(root_path)
       flash[:alert].should eql ("The project you were looking for could not be found.")
     end
+    
     context "with permission to view the project" do
               before do
                 sign_in(:user, user)
                 Permission.create!(:user => user, :thing => project, :action => "view")
-              end
+    end
               
               def cannot_create_tickets!
                 response.should redirect_to(project)

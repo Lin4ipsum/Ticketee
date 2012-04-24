@@ -80,6 +80,7 @@ namespace :admin do
   root :to => "base#index"
   resources :users do
     resources :permissions
+    resources :files
  end
 end
 
