@@ -22,6 +22,8 @@ put '/admin/users/:user_id/permissions',
                 :to => 'admin/permissions#update',
                 :as => :update_user_permissions
                 
+resources :files
+                
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -80,7 +82,7 @@ namespace :admin do
   root :to => "base#index"
   resources :users do
     resources :permissions
-    resources :files
+
  end
 end
 

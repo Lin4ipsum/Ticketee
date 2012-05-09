@@ -37,6 +37,8 @@ end
 gem 'devise', '~> 1.4.3'
 gem 'cancan'
 gem 'paperclip'
+gem 'chromedriver-helper'
+gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -50,4 +52,4 @@ gem 'paperclip'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'

@@ -11,6 +11,12 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 RSpec.configure do |config|
   config.mock_with :rspec
 
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  
+  Selenium::WebDriver::Chrome.path = "/usr/lib/chromium-browser/chromium-browser"
+    driver = Selenium::WebDriver.for :chrome
+end
 
   # ## Mock Framework
   #
