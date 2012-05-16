@@ -38,3 +38,5 @@ Scenario: Changing a ticket's state
   And I press "Create Comment"
   Then I should see "Comment has been created."
   And I should see "Open" within "#ticket .state"
+  # Then show me the page
+  Then I should see "Open" within "#comments"
