@@ -81,9 +81,9 @@ resources :files
 
 namespace :admin do
   root :to => "base#index"
+  resources :states
   resources :users do
-    resources :permissions
-
+  resources :permissions
  end
 end
 
