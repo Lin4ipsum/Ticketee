@@ -1,20 +1,21 @@
 <div id='ticket'>
-	<h2><%= @ticket.title %></h2>
-	<br><small>Created by <%= @ticket.user.email %></small>
-  	<%= render @ticket.state if @ticket.state %>
-	  <%= simple_format(@ticket.description) %>
+	  <h2><%= @ticket.title %></h2>
+	  <br><small>Created by <%= @ticket.user.email %></small>
+  	  <%= render @ticket.state if @ticket.state %>
+	    <%= simple_format(@ticket.description) %>
+	    <div id='tags'><%= render @ticket.tags %></div>
 	
 		<% if @ticket.assets.exists? %>
-		  <h3>Attached Files</h3>
+		    <h3>Attached Files</h3>
 		  <div class="assets">
-			  <% @ticket.assets.each do |asset| %>
-			  <p>
-			    <%= link_to File.basename(asset.asset_file_name), asset.asset.url %>
-			  </p>
-			  <p>
-			    <small><%= number_to_human_size(asset.asset.size) %></small>
-        </p> 
-        <% end %>
+			    <% @ticket.assets.each do |asset| %>
+			    <p>
+			      <%= link_to File.basename(asset.asset_file_name), asset.asset.url %>
+			    </p>
+			    <p>
+			      <small><%= number_to_human_size(asset.asset.size) %></small>
+          </p> 
+          <% end %>
       </div>
   	<% end %>
 			
