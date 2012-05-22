@@ -10,7 +10,7 @@
 
 #2nd admin
 #email: d@gmail.com, password = password
-
+# 
 Permission.create!(:user => User.find_by_email("user@ticketee.com"),
                    :thing => Project.find_by_name("Ticketee Beta"),
                    :action => 'view')
