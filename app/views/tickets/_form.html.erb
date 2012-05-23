@@ -1,5 +1,6 @@
 <%= form_for [@project, @ticket], :html => { :multipart => true} do |f| %>
  <%= f.error_messages %>
+ 
  <p>
    <%= f.label :title %>
    <%= f.text_field :title %>  
@@ -9,13 +10,10 @@
    <%= f.label :description %>
    <%= f.text_area :description %>
  </p>
- 
- <p>
-   <%= label_tag :tags %>
-   <%= text_field_tag :tags, params[:tags] %>
- </p>
 
- <% number = 0 %>
+  <%= render "tags/form" %>
+
+  <% number = 0 %>
  <div id="files">
   <%= render :partial => "files/form",
              :locals  => { :number => number } %>
@@ -23,4 +21,5 @@
  
   <%= link_to "Add another file", 'javascript:', :id => "add_another_file" %>
   <%= f.submit %>
+  
 <% end %>
